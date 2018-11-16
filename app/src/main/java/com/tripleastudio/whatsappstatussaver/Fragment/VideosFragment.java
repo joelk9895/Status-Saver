@@ -26,7 +26,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.tripleastudio.whatsappstatussaver.Activity.VideoDetailActivity;
 import com.tripleastudio.whatsappstatussaver.Models.DataModel;
-import com.wedevelopapps.whatsappstatussaver.R;
+import com.tripleastudio.whatsappstatussaver.R;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.comparator.LastModifiedFileComparator;
@@ -85,7 +85,6 @@ public class VideosFragment extends android.support.v4.app.Fragment {
         String data[] = new String[0];
         //TODO remove muList as mylist is used now
 
-        List<String> muList = new ArrayList<String>();
         ArrayList<DataModel> myList= new ArrayList<>();
         try {
             String path = Environment.getExternalStorageDirectory().toString() + "/WhatsApp/Media/.Statuses";
@@ -117,8 +116,9 @@ public class VideosFragment extends android.support.v4.app.Fragment {
             tv.setVisibility(View.GONE);
             cryingEmoji.setVisibility(View.GONE);
         }
-        Log.d("test2", "onStart: "+muList.size());
+        Log.d("test2", "onStart: "+myList.size());
 
+        deleteUnusedThumbs(myList);
 
 
     }
@@ -144,15 +144,13 @@ public class VideosFragment extends android.support.v4.app.Fragment {
         }
         if (allItems.size() > 0) {
             for(DataModel data:mylist){
-                allItems.remove(data.getFileName());
+                allItems.remove(data.getFileName() +".jpg");
             }
         }
         return allItems;
     }
 
     private void delete(ArrayList<String> list){
-
-        ArrayList<String> allItems = new ArrayList<String>();
         try {
             String path = Environment.getExternalStorageDirectory().toString() + "/WhatsAppStatus/Videos/.Thum";
             Log.d("test", "onStart: " + path);
@@ -161,7 +159,11 @@ public class VideosFragment extends android.support.v4.app.Fragment {
             Log.d("test", "onStart: " + files.length);
             Arrays.sort(files, LastModifiedFileComparator.LASTMODIFIED_REVERSE);
             for (File file: files) {
-                if(list.contains(file.getName())){
+
+                String s=  file.getName();
+                for(String fileName:list)
+                if(fileName.equals(s)){
+
 
                     file.delete();
 
@@ -214,8 +216,6 @@ public class VideosFragment extends android.support.v4.app.Fragment {
         public void onBindViewHolder(final MyHolder holder, int position) {
             final Uri iri = Uri.parse(myList.get(position).getPath());
             File f = new File(myList.get(position).getPath());
-
-            deleteUnusedThumbs(myList);
 
             File thumFile = new File(Environment.getExternalStorageDirectory() + "/WhatsAppStatus/Videos/.Thum/" + f.getName() + ".jpg");
             if(!thumFile.exists()){
