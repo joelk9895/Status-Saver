@@ -1,5 +1,11 @@
 # Status-Saver
 
+[![HitCount](http://hits.dwyl.io/ahrar01/GEC-Developers/Status-Saver.svg)](http://hits.dwyl.io/ahrar01/GEC-Developers/Status-Saver)
+
+#### If you like this project and want to support this project development please support us with a little donation.
+#### Please click on the Paypal donate button. Many thanks!
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://paypal.me/GECDevs?locale.x=en_GB)
 
 A simple Android Application to download Your contacts Status from whatsapp in a single click.
 This app does not require any internet connection.
