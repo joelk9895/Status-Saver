@@ -13,8 +13,7 @@
 
   ![GitHub forks](https://img.shields.io/github/forks/gec-developers/status-saver?style=social)
  
-[![HitCount](http://hits.dwyl.io/ahrar01/GEC-Developers/Status-Saver.svg)](http://hits.dwyl.io/ahrar01/GEC-Developers/Status-Saver)
-
+![ViewCount](https://views.whatilearened.today/views/github/rawkush/status_saver.svg)
 ##### If you like this project and want to support this project development please support us with a little donation.
 #### Please click on the Paypal donate button. Many thanks!
 
