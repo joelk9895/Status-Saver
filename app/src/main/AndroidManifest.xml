@@ -29,7 +29,7 @@
             android:value="87353cd25208b93e0600de8b8a59d4fec4f30191" />
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="[ADMOB_APP_ID]" />
+            android:value="ca-app-pub-2413056426598279~9700684836" />
 
         <activity android:name="com.tripleastudio.whatsappstatussaver.Activity.SavedGallery" />
         <activity android:name="com.tripleastudio.whatsappstatussaver.Activity.ShowPictureItems" />
